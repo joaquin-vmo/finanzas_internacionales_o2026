@@ -15,40 +15,32 @@
 \pgfplotsset{compat=1.18}
 \usetikzlibrary{decorations.pathreplacing,babel}
 
-% ----------------------------------------------------------------
-% Bandera para mostrar/ocultar respuestas
+
 \newif\ifprintanswers
-% Descomenta la siguiente linea para mostrar las respuestas:
- \printanswerstrue
-% ----------------------------------------------------------------
+% \printanswerstrue
+
 
 \definecolor{miazul}{RGB}{25,43,191}
 
-% Definicion de solution con recuadro
-\newenvironment{solution}{%
+% Definición de solution con recuadro
+\NewEnviron{solution}{%
   \ifprintanswers
     \begin{tcolorbox}[
-      colframe=black,
-      colback=white,
-      boxrule=0.8pt,
-      arc=0pt,
-      left=4pt,
-      right=4pt,
-      top=4pt,
-      bottom=4pt,
+      colframe=black,     % color del borde
+      colback=white,      % fondo blanco
+      boxrule=0.8pt,      % grosor de la línea
+      arc=0pt,            % esquinas agudas
+      left=4pt,           % espacio interior izquierdo
+      right=4pt,          % espacio interior derecho
+      top=4pt,            % espacio interior superior
+      bottom=4pt,         % espacio interior inferior
       before skip=0.5\baselineskip,
       after skip=0.5\baselineskip
     ]
-    \textbf{\textit{Respuesta:}}\quad
-  \else
-    \setbox\z@\vbox\bgroup
-  \fi
-}{%
-  \ifprintanswers
-    \hfill\(\triangleright\)
+      \textbf{\textit{Respuesta:}}\quad
+      \BODY
+      \hfill\(\triangleright\)
     \end{tcolorbox}
-  \else
-    \egroup
   \fi
 }
 
