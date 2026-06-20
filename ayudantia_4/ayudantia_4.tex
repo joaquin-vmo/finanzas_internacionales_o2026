@@ -1,0 +1,569 @@
+\documentclass[a4paper]{article}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{subcaption}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\usepackage[a4paper,top=1cm,bottom=1.5cm,left=3cm,right=3cm,marginparwidth=2.5cm]{geometry}
+\usepackage{pgfplots}
+\usepackage{palatino}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{decorations.pathreplacing,babel,arrows.meta}
+\tikzset{>=Stealth}
+\AtBeginDocument{\shorthandoff{<>}}
+
+\newif\ifprintanswers
+\printanswerstrue
+
+\definecolor{miazul}{RGB}{25,43,191}
+
+% Definición de solution con recuadro
+\NewEnviron{solution}{%
+  \ifprintanswers
+    \begin{tcolorbox}[
+      colframe=black,     % color del borde
+      colback=white,      % fondo blanco
+      boxrule=0.8pt,      % grosor de la línea
+      arc=0pt,            % esquinas agudas
+      left=4pt,           % espacio interior izquierdo
+      right=4pt,          % espacio interior derecho
+      top=4pt,            % espacio interior superior
+      bottom=4pt,         % espacio interior inferior
+      before skip=0.5\baselineskip,
+      after skip=0.5\baselineskip
+    ]
+      \textbf{\textit{Respuesta:}}\quad
+      \BODY
+      \hfill\(\triangleright\)
+    \end{tcolorbox}
+  \fi
+}
+
+\begin{document}
+
+\noindent\makebox[\textwidth]{%
+  \texttt{joamartine@fen.uchile.cl}%
+  \hfill%
+  Magíster en Análisis Económico
+}
+
+\vspace{5mm}
+
+\begin{center}
+  {\large \textbf{Finanzas Internacionales, Otoño 2026}}\\[4pt]
+  {\large \textbf{Ayudantía 4}}
+\end{center}
+
+\vspace{3mm}
+
+\section*{Comentes}
+
+\begin{enumerate}
+    \item[a)] Explique el efecto de una política expansiva según su naturaleza y la política cambiaria de una economía pequeña.
+    \begin{itemize}
+        \item Expansión monetaria con tipo de cambio flexible.
+        \item Expansión fiscal con tipo de cambio fijo.
+        \item Expansión fiscal con tipo de cambio flexible.
+        \item Expansión monetaria con tipo de cambio fijo.
+    \end{itemize}
+    \begin{solution}
+        \begin{itemize}
+        \item \textbf{Expansión monetaria con tipo de cambio flexible.}
+
+        En este caso, el banco central aumenta la oferta monetaria, lo que reduce la tasa de interés doméstica. Dado que hay perfecta movilidad de capitales, esta caída genera una salida de capitales que presiona al alza el tipo de cambio nominal (depreciación de la moneda). La depreciación estimula las exportaciones netas, desplazando la curva IS hacia la derecha y aumentando el producto. \textbf{La política monetaria es efectiva para expandir la producción bajo tipo de cambio flexible.}
+
+        \item \textbf{Expansión fiscal con tipo de cambio fijo.}
+
+        Un aumento del gasto fiscal desplaza la curva IS hacia la derecha, generando presión al alza sobre la tasa de interés. Dado que la tasa de interés no puede superar la tasa internacional, ingresan capitales, lo que genera una presión a la baja sobre el tipo de cambio. Para mantener el tipo de cambio fijo, el banco central debe intervenir comprando divisas y emitiendo moneda, lo que expande la oferta monetaria y desplaza la curva LM hacia la derecha. \textbf{La política fiscal es efectiva bajo tipo de cambio fijo, y el producto aumenta.}
+
+        \item \textbf{Expansión fiscal con tipo de cambio flexible.}
+
+        El aumento del gasto fiscal desplaza la curva IS hacia la derecha, lo que inicialmente genera presión alcista sobre la tasa de interés. Sin embargo, esto atrae capitales del exterior, apreciando el tipo de cambio y reduciendo las exportaciones netas. Este efecto compensa (o anula completamente) el estímulo fiscal, desplazando IS de vuelta a su posición original. \textbf{La política fiscal es inefectiva para aumentar el producto bajo tipo de cambio flexible.}
+
+        \item \textbf{Expansión monetaria con tipo de cambio fijo.}
+
+        Una expansión monetaria tiende a reducir la tasa de interés, lo que genera salida de capitales y presión alcista sobre el tipo de cambio. Sin embargo, bajo tipo de cambio fijo, el banco central debe intervenir vendiendo reservas internacionales para sostener el tipo de cambio, contrayendo la base monetaria. Esto anula completamente el intento de expansión monetaria. \textbf{La política monetaria es inefectiva bajo tipo de cambio fijo.}
+
+    \end{itemize}
+    \end{solution}
+
+    \item[b)] Una depreciación del tipo de cambio real siempre mejora inmediatamente la balanza comercial y desplaza la curva IS hacia la derecha.
+    \begin{solution}
+    \textbf{Falso.} Una depreciación del tipo de cambio puede tener un efecto no lineal en el corto plazo sobre la balanza comercial.
+
+    \medskip
+
+    Según la condición de \textbf{Marshall-Lerner}, una depreciación mejora la balanza comercial si la suma de las elasticidades precio de las exportaciones e importaciones (en valor absoluto) es mayor que uno. Si esta condición no se cumple, la balanza comercial podría empeorar inicialmente.
+
+    \medskip
+
+    Además, debido a rezagos en los volúmenes de comercio frente a cambios en precios relativos, en el muy corto plazo puede observarse un efecto negativo transitorio, conocido como la Curva J: la balanza comercial empeora justo después de la depreciación, antes de mejorar.
+
+    \medskip
+
+    En el modelo IS-LM abierto, esto implica que la depreciación del tipo de cambio no necesariamente desplaza inmediatamente la curva IS hacia la derecha. El efecto neto dependerá de si la mejora en exportaciones netas es inmediata o no.
+    \end{solution}
+
+    \item[c)] Una expansión monetaria inesperada provoca una apreciación del tipo de cambio en el corto plazo.
+    \begin{solution}
+        Falso. Provoca una depreciación del tipo de cambio.
+
+        El mecanismo de transmisión es el siguiente: un aumento inesperado en la oferta monetaria (\( M \)) genera un exceso de liquidez en la economía, lo que reduce la tasa de interés doméstica (\( i \)) por efecto de equilibrio en el mercado de dinero (\( M/P = L(i, Y) \)).
+
+        \medskip
+
+        Dado que existe perfecta movilidad de capitales, la caída en la tasa de interés interna genera una salida de capitales hacia el exterior en búsqueda de mayor rentabilidad. Esta salida de capitales incrementa la demanda por divisas y reduce la demanda por moneda local, presionando al alza el tipo de cambio nominal \( e \) (es decir, provocando una depreciación de la moneda).
+
+        \medskip
+
+        En resumen, la expansión monetaria reduce la tasa de interés, lo que genera salida de capitales y depreciación del tipo de cambio nominal.
+
+        \medskip
+
+        En una economía pequeña con tipo de cambio flexible:
+
+        \begin{center}
+        \begin{tikzpicture}[scale=0.9]
+          % Panel izquierdo: (Y, i)
+          \draw[->, thick] (0,0) -- (5,0) node[right] {$Y$};
+          \draw[->, thick] (0,0) -- (0,5) node[above] {$i$};
+          \draw[red!70!black, very thick] (0.5,1.5) -- (3.7,4.7) node[above] {$LM_1$};
+          \draw[red!70!black, very thick, dashed] (1.3,1.3) -- (4.4,4.4) node[right] {$LM_2$};
+          \draw[blue!70!black, very thick] (1,4) -- (4,1) node[below right] {$IS_1$};
+          \draw[blue!70!black, very thick, dashed] (2,4) -- (4.8,1.2) node[right] {$IS_2$};
+          \draw[dashed] (0,3) node[left] {$i^*$} -- (4,3);
+          \draw[dotted] (2,0) node[below] {$Y_1$} -- (2,3);
+          \draw[dotted] (3,0) node[below] {$Y_2$} -- (3,3);
+          \filldraw (2,3) circle (1.5pt) node[above left] {$A$};
+          \filldraw (3,3) circle (1.5pt) node[above right] {$C$};
+          \filldraw (2.5,2.5) circle (1.5pt) node[below right] {$B$};
+        \end{tikzpicture}
+        \hspace{0.6cm}
+        \begin{tikzpicture}[scale=0.9]
+          % Panel derecho: (e, i)
+          \draw[->, thick] (0,0) -- (5,0) node[right] {$e$};
+          \draw[->, thick] (0,0) -- (0,5) node[above] {$i$};
+          \draw[blue!70!black, very thick, domain=0.9:3, samples=60] plot (\x, {3.6/\x});
+          \draw[blue!70!black, very thick, dashed, domain=1.4:4, samples=60] plot (\x, {6/\x});
+          \node at (0.7,4.0) {$1$};
+          \node at (1.7,4.4) {$2$};
+          \draw[dashed] (0,3) node[left] {$i^*$} -- (3.2,3);
+          \draw[dashed] (0,2) -- (3.2,2);
+          \draw[dotted] (1.2,0) node[below] {$e_1$} -- (1.2,3);
+          \draw[dotted] (2,0) node[below] {$e_2$} -- (2,3);
+          \draw[dotted] (3,0) node[below] {$e_D$} -- (3,2);
+          \filldraw (1.2,3) circle (1.5pt) node[above left] {$A$};
+          \filldraw (2,3) circle (1.5pt) node[above right] {$C$};
+          \filldraw (3,2) circle (1.5pt) node[above right] {$B$};
+        \end{tikzpicture}
+        \end{center}
+    \end{solution}
+
+    \item[d)] Explique la causa fundamental del fenómeno de overshooting.
+    \begin{solution}
+        En el modelo se asume que los precios no son flexibles, hay rigideces nominales. Mientras que los activos financieros y el tipo de cambio se ajustan de manera instantánea.
+
+        Si los precios fueran flexibles no habría ninguna sobrereacción del tipo de cambio.
+    \end{solution}
+
+    \item[e)] El overshooting amplifica los efectos de la política monetaria sobre el tipo de cambio en el corto plazo. Explique
+    \begin{solution}
+        El overshooting amplifica los efectos de la política monetaria sobre el tipo de cambio en el corto plazo debido a la existencia de rigideces nominales.
+
+        Ante una expansión monetaria, la oferta de dinero aumenta, lo que reduce la tasa de interés doméstica \( i \). Con movilidad de capitales, esta reducción en \( i \) genera una salida de capitales, lo que presiona al alza el tipo de cambio nominal \( e \) (es decir, una depreciación de la moneda local).
+
+        Como los precios \( P \) no se ajustan de inmediato, el tipo de cambio nominal debe depreciarse más allá de su valor de largo plazo para que los agentes tengan incentivos a mantener activos en la moneda doméstica, anticipando una futura apreciación. Esta condición se expresa en la paridad descubierta de tasas de interés:
+
+\[
+\frac{e_{t+1} - e_t}{e_t} \approx i - i^*
+\]
+        Dado que \( i < i^* \) tras la expansión monetaria, se requiere que \( e_t > e_{t+1} \), es decir, una depreciación inicial más pronunciada que la de largo plazo. Esta sobrerreacción es el overshooting.
+
+        \begin{center}
+        \begin{tikzpicture}[scale=1.0]
+          \draw[->, thick] (0,0) -- (6.5,0) node[right] {$t$};
+          \draw[->, thick] (0,0) -- (0,5) node[above] {$e$};
+          \draw[dashed] (0,4) node[left] {$e_D$} -- (2,4);
+          \draw[dashed] (0,3) node[left] {$\tilde e_2$} -- (6,3);
+          \node[left] at (0,2) {$\tilde e_1$};
+          \draw[blue!70!black, very thick] (0,2) -- (2,2);
+          \draw[blue!70!black, very thick] (2,2) -- (2,4);
+          \draw[blue!70!black, very thick, domain=2:6, samples=80] plot (\x, {3 + exp(-(\x-2))});
+          \draw[dotted] (2,0) node[below] {$t_0$} -- (2,4);
+        \end{tikzpicture}
+        \end{center}
+
+        El overshooting implica que el efecto de la política monetaria sobre el tipo de cambio es más intenso en el corto plazo que en el largo, ya que el tipo de cambio debe ajustarse de forma exagerada para compensar la rigidez de precios y las expectativas racionales de los agentes.
+    \end{solution}
+
+    \item[f)] Posterior al anuncio de un paquete fiscal por parte del gobierno del Reino Unido, que compromete bajas en impuestos y aumento en el gasto, la libra esterlina ha sufrido una fuerte depreciación.
+
+    \begin{quote}
+        \textit{Bajo un modelo de déficit fiscal, podemos darle varias interpretaciones a lo ocurrido en el Reino Unido. Si aumentó el Gasto y al mismo tiempo disminuyeron los Impuestos, necesariamente se proyectará un aumento del déficil fiscal. Este déficit tiene que ser financiado, lo cual puede hacerse con deuda o con señoreaje. Si se hace con señoreaje, tendrán que aumentar la cantidad de dinero para generarlo, lo cual llevará a mayores expectativas de inflación y una depreciación nominal de la libra (lo que se observó en los hechos). Si se hace con deuda aumentará el riesgo país, con el mismo efecto.}
+    \end{quote}
+
+    Contraste lo anterior con el efecto que tendría el anuncio fiscal antes mencionado en el contexto de un modelo IS LM de economía abierta.
+        \begin{solution}
+            En un modelo de IS-LM de economía abierta, en un contexto de tipo de cambio flexible y perfecta movilidad de capitales, políticas de este tipo generarán una expansión de la IS, ya que habrá más ingreso disponible para los hogares y también un estímulo fiscal. En el efecto de impacto, antes de que actúen los flujos de capital, la IS se desplaza a la derecha y presiona al alza el producto y la tasa de interés. Sin embargo, ese diferencial de tasas atrae capitales del exterior que aprecian el tipo de cambio y reducen las exportaciones netas, devolviendo la IS a su posición original.\vspace{2mm}
+
+            Por lo tanto, en el equilibrio final el producto y la tasa de interés vuelven a su nivel inicial, y lo único que permanece es la apreciación de la moneda. El que en los hechos se haya observado una depreciación da cuenta de que este modelo describe fluctuaciones de corto plazo y de los horizontes de planificación con los que se reaccionó a la política.
+        \end{solution}
+
+\end{enumerate}
+
+\section*{Matemático I: IS–LM de economía abierta con movilidad imperfecta de capitales}
+Suponga una economía abierta que sigue las siguientes condiciones:
+
+\begin{align*}
+\text{IS:}\quad &Y \;=\; c\,(Y - T)\;+\;a \;-\;b\,i\;+\;G\;+\;x\,e\;-\;m\,Y,\\[6pt]
+\text{LM:}\quad &\frac{M}{P}\;=\;k\,Y\;-\;h\,i,\\[6pt]
+\text{BP:}\quad &0\;=\;x\,e\;-\;m\,Y\;+\;v\,\bigl(i - i^*\bigr).
+\end{align*}
+
+con los siguientes parámetros (precios normalizados \(P=1\)):
+\[
+c = \tfrac12,\quad T=0,\quad a=100,\quad b=1,\quad G=50,\quad
+x=1,\;m=\tfrac12,\;v=1,\;i^*=0,\;
+\frac{M}{P}=50,\;k=1,\;h=1.
+\]
+Sea \(Y\) el ingreso, \(i\) la tasa de interés local y \(e\) el tipo de cambio.
+
+\begin{enumerate}
+  \item[a)] Plantee el sistema de equilibrio (movilidad imperfecta, \(v=1\)).
+  \begin{solution}
+  \[
+  \begin{cases}
+  \text{IS:}&
+  Y = \tfrac12(Y - 0) + 100 - 1\cdot i + 50 + e - \tfrac12\,Y
+  \;\Longrightarrow\;
+  Y = 150 - i + e,\\[6pt]
+  \text{LM:}&
+  50 = Y - i
+  \;\Longrightarrow\;
+  i = Y - 50,\\[6pt]
+  \text{BP:}&
+  0 = e - \tfrac12\,Y + (i - 0)
+  \;\Longrightarrow\;
+  e = \tfrac12\,Y - i.
+  \end{cases}
+  \]
+  \end{solution}
+
+  \item[b)] Resuelva numéricamente para \(Y^*\), \(i^*\) y \(e^*\) bajo movilidad imperfecta.
+  \begin{solution}
+  De LM: \(i = Y - 50\).\\
+  De BP: \(e = \tfrac12Y - (Y - 50) = -\tfrac12Y + 50\).\\
+  Sustituyendo en IS:
+  \[
+  Y = 150 - (Y-50) + \bigl(-\tfrac12Y + 50\bigr)
+    = 150 - Y + 50 - \tfrac12Y + 50
+    = 250 - \tfrac32Y
+    \;\Longrightarrow\;
+    \tfrac52Y = 250
+    \;\Longrightarrow\;
+    Y^* = 100.
+  \]
+  Luego
+  \[
+    i = 100 - 50 = 50,
+    \qquad
+    e = -\tfrac12\cdot100 + 50 = 0.
+  \]
+  Aquí \(i = 50\) es la tasa de interés doméstica de equilibrio, que no debe confundirse con la tasa internacional \(i^* = 0\).
+  \end{solution}
+
+  \item[c)] Extienda el ejercicio al caso de movilidad perfecta de capitales (\(v\to\infty\)): plantee las ecuaciones y calcule \(Y^{PM}\), \(i^{PM}\) y \(e^{PM}\).
+  \begin{solution}
+  Bajo perfecta movilidad la tasa local queda anclada a la externa, \(i = i^* = 0\). El equilibrio se determina con IS y LM, mientras que la balanza comercial se financia con los flujos de capital y no tiene por qué ser nula.\\
+  De LM:
+  \[
+    50 = Y - 0
+    \;\Longrightarrow\;
+    Y^{PM} = 50.
+  \]
+  De IS:
+  \[
+    Y = 150 - i + e
+    \;\Longrightarrow\;
+    50 = 150 - 0 + e
+    \;\Longrightarrow\;
+    e^{PM} = -100.
+  \]
+  Por tanto:
+  \[
+    Y^{PM} = 50,\quad i^{PM} = 0,\quad e^{PM} = -100.
+  \]
+  Con estos valores la cuenta corriente es \(x\,e - m\,Y = -100 - 25 = -125\), un déficit que se financia con una entrada de capitales de igual magnitud.
+  \end{solution}
+\end{enumerate}
+
+\section*{Matemático II: IS-LM: tipo de cambio fijo y devaluación sorpresiva, política fiscal y tipo de cambio flexible}
+
+Considere una economía abierta con tipo de cambio nominal fijo $\bar{e}$. El mercado de bienes puede caracterizarse por las siguientes ecuaciones:
+
+\[
+C = \bar{C} + cY^d \tag{1}
+\]
+\[
+Y^d = (1 - \tau)Y \tag{2}
+\]
+\[
+I = \bar{I} - \beta i \tag{3}
+\]
+\[
+G = \bar{G} \tag{4}
+\]
+\[
+XN = \bar{XN} + \gamma q - mY^d, \tag{5}
+\]
+
+donde $Y, C, I, G, XN, i$ y $q$ son el producto, el consumo, la inversión, el gasto de gobierno, las exportaciones netas, la tasa de interés y el tipo de cambio real ($q = eP^*/P$), respectivamente. $\bar{C}, \bar{I}, \bar{G}, \bar{XN}, c, \tau, \beta, \gamma$ y $m$ son todas constantes positivas. Asuma además que $P$ y $P^*$ son fijos e iguales a 1. Hay perfecta movilidad de capitales y la tasa de interés internacional es $i^*$. La demanda real de dinero es
+
+\[
+L = \rho Y - \varphi i, \tag{6}
+\]
+
+donde $\rho$ y $\varphi$ son constantes positivas. Por simplicidad asuma que el pago de factores es 0.
+
+
+\begin{itemize}
+
+\item[a)] Encuentre la tasa de interés, el producto y el saldo en la balanza comercial $(X-M)$ de equilibrio. Obviamente debe representar las variables anteriores en función de los parámetros del modelo.
+
+\begin{solution}
+Como hay perfecta movilidad de capitales se tiene que $i = i^*$. Para calcular el producto de equilibrio:
+
+\[
+Y = C + I + G + XN
+\]
+
+\[
+= \bar{C} + cY^d + \bar{I} - \beta i^* + \bar{G} + \bar{XN} + \gamma \bar{e} - mY^d
+\]
+
+\[
+= \bar{C} + c(1 - \tau)Y + \bar{I} - \beta i^* + \bar{G} + \bar{XN} + \gamma \bar{e} - m(1 - \tau)Y
+\]
+
+
+\[
+Y \left(1 - (c - m)(1 - \tau) \right) = \bar{C} + \bar{I} - \beta i^* + \bar{G} + \bar{XN} + \gamma \bar{e}
+\]
+
+Finalmente obtenemos que
+
+\[
+Y = \frac{\bar{C} + \bar{I} - \beta i^* + \bar{G} + \bar{XN} + \gamma \bar{e}}{1 - (c - m)(1 - \tau)}. \tag{7}
+\]
+
+Luego, el saldo en la balanza comercial corresponde a
+
+\[
+XN = \bar{XN} + \gamma \bar{e} - mY^d
+\]
+\[
+= \bar{XN} + \gamma \bar{e} - m(1 - \tau)Y
+\]
+\[
+= \frac{(1 - c(1 - \tau))(\bar{XN} + \gamma \bar{e}) - m(1 - \tau)(\bar{C} + \bar{I} + \bar{G} - \beta i^*)}{1 - (c - m)(1 - \tau)}
+\]
+
+\end{solution}
+
+
+    \item[b)] Suponga que repentinamente el Banco Central realiza una devaluación del tipo de cambio de $d\%$ producto de que el déficit en la cuenta corriente original se veía como insostenible, y se estima que debe bajar una magnitud $K$. Calcule cuánto debería ser la devaluación $d$ para reducir el déficit en $K$. Asuma que la devaluación es completamente sorpresiva (el público general no la esperaba).
+
+    \begin{solution}
+Si se quiere reducir el déficit de cuenta corriente en $K$ se debe cumplir que
+
+\[
+BC_1 + K = BC_2, \tag{8}
+\]
+donde $BC_1$ es la balanza comercial calculada en la parte anterior y $BC_2$ es la nueva balanza comercial con el tipo de cambio devaluado en un $d\%$. Es decir, se tiene que:
+
+\[
+BC_1 = \frac{(1 - c(1 - \tau))(\bar{XN} + \gamma \bar{e}) - m(1 - \tau)(\bar{C} + \bar{I} + \bar{G} - \beta i^*)}{1 - (c - m)(1 - \tau)} \tag{9}
+\]
+
+\[
+BC_2 = \frac{(1 - c(1 - \tau))(\bar{XN} + \gamma \bar{e}(1 + d)) - m(1 - \tau)(\bar{C} + \bar{I} + \bar{G} - \beta i^*)}{1 - (c - m)(1 - \tau)} \tag{10}
+\]
+
+De (8), (9) y (10) obtenemos que
+
+\[
+K = \frac{(1 - c(1 - \tau))\gamma \bar{e}d}{1 - (c - m)(1 - \tau)}.
+\]
+
+Despejamos $d$
+
+\[
+d = \frac{(1 - (c - m)(1 - \tau))K}{(1 - c(1 - \tau))\gamma \bar{e}}.
+\]
+
+\end{solution}
+
+
+    \end{itemize}
+
+    Ahora suponga un tipo de cambio nominal flexible $e$ y que la oferta de dinero, que es controlada por el Banco Central, es constante e igual a $\bar{M}$
+
+\begin{itemize}
+
+    \item[c)] Utilizando las primeras cinco ecuaciones encuentre el nivel de producto de equilibrio. Determine, manteniendo todo lo demás constante, el efecto en el producto de un aumento en el gasto de gobierno.
+
+    \begin{solution}
+Tenemos que
+
+\[
+Y = C + I + G + XN
+\]
+\[
+= \bar{C} + cY^d + \bar{I} - \beta i + \bar{G} + \bar{XN} + \gamma q - mY^d
+\]
+\[
+= \bar{C} + c(1 - \tau)Y + \bar{I} - \beta i + \bar{G} + \bar{XN} + \gamma q - m(1 - \tau)Y
+\]
+\[
+Y \left(1 - (c - m)(1 - \tau) \right) = \bar{C} + \bar{I} - \beta i + \bar{G} + \bar{XN} + \gamma q
+\]
+
+Finalmente obtenemos que
+
+\[
+Y = \frac{\bar{C} + \bar{I} - \beta i + \bar{G} + \bar{XN} + \gamma q}{1 - (c - m)(1 - \tau)}. \tag{11}
+\]
+
+Luego
+
+\[
+\frac{\partial Y}{\partial \bar{G}} = \frac{1}{1 - (c - m)(1 - \tau)}
+\]
+
+\end{solution}
+
+
+    \item[d)] Utilizando las primeras cinco ecuaciones encuentre el tipo de cambio real de equilibrio en función del producto y de las constantes del modelo. Determine, manteniendo el producto constante, el efecto en el tipo de cambio real de un aumento en el gasto de gobierno.
+
+    \begin{solution}
+Despejamos $q$ de (11) y obtenemos
+
+\[
+q = \frac{1}{\gamma} \left( Y[1 - (c - m)(1 - \tau)] - [\bar{C} + \bar{I} - \beta i + \bar{G} + \bar{XN}] \right).
+\]
+
+Luego
+
+\[
+\frac{\partial q}{\partial \bar{G}} = -\frac{1}{\gamma}
+\]
+
+Vemos que el tipo de cambio real baja frente a un aumento del gasto fiscal.
+
+\end{solution}
+
+
+    \item[e)] Utilizando el marco informado encuentre el tipo de cambio real de equilibrio en función únicamente de las constantes. ¿Cómo cambia ahora el tipo de cambio real al aumentar el gasto del gobierno? ¿Cuál es el efecto en el producto? Respalde sus respuestas mediante cálculos matemáticos. Use un gráfico IS-LM para explicar de manera intuitiva lo que ocurre.
+
+    \begin{solution}
+En el mercado monetario se tiene que cumplir que
+
+\[
+L = \bar{M}
+\]
+\[
+\rho Y - \varphi i = \bar{M}.
+\]
+
+Como existe perfecta movilidad de capitales se debe cumplir que $i = i^*$. Por lo tanto tenemos que
+
+\[
+\rho \left( \frac{\bar{C} + \bar{I} - \beta i^* + \bar{G} + \bar{XN} + \gamma q}{1 - (c - m)(1 - \tau)} \right) - \varphi i^* = \bar{M}
+\]
+
+\[
+\Rightarrow \left( \frac{\bar{C} + \bar{I} - \beta i^* + \bar{G} + \bar{XN} + \gamma q}{1 - (c - m)(1 - \tau)} \right) = \frac{\bar{M} + \varphi i^*}{\rho}
+\]
+
+\[
+\Rightarrow \bar{C} + \bar{I} - \beta i^* + \bar{G} + \bar{XN} + \gamma q = \frac{(\bar{M} + \varphi i^*)(1 - (c - m)(1 - \tau))}{\rho}.
+\]
+
+Finalmente
+
+\[
+q = \frac{(\bar{M} + \varphi i^*)(1 - (c - m)(1 - \tau)) - \rho (\bar{C} + \bar{I} - \beta i^* + \bar{G} + \bar{XN})}{\gamma \rho}.
+\]
+
+Luego
+
+\[
+\frac{\partial q}{\partial \bar{G}} = -\frac{1}{\gamma}.
+\]
+
+Note que de (11) obtenemos que
+
+\[
+dY = \frac{\partial Y}{\partial \bar{G}} d\bar{G} + \frac{\partial Y}{\partial q} dq.
+\]
+
+Por otro lado tenemos que
+
+\[
+\frac{\partial q}{\partial \bar{G}} = \frac{dq}{d\bar{G}} \iff dq = \frac{\partial q}{\partial \bar{G}} d\bar{G}.
+\]
+
+Luego
+
+\[
+dY = \frac{\partial Y}{\partial \bar{G}} d\bar{G} + \frac{\partial Y}{\partial q} \frac{\partial q}{\partial \bar{G}} d\bar{G} = \left( \frac{1}{1 - (c - m)(1 - \tau)} + \frac{\gamma}{1 - (c - m)(1 - \tau)} \times \left(-\frac{1}{\gamma}\right) \right) d\bar{G} = 0
+\]
+
+Por lo tanto no hay efecto en el producto.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+  % Panel izquierdo: (Y, i)
+  \draw[->, thick] (0,0) -- (5.5,0) node[right] {$Y$};
+  \draw[->, thick] (0,0) -- (0,5) node[above] {$i$};
+  \draw[red!70!black, very thick] (1,1.5) -- (4,4.5) node[above] {$LM$};
+  \draw[blue!70!black, very thick] (1.5,4) -- (4.5,1) node[below right] {$IS$};
+  \draw[blue!70!black, very thick, dashed] (2.5,4) -- (5,1.5) node[right] {$IS'$};
+  \draw[dashed] (0,3) node[left] {$i^*$} -- (4,3);
+  \draw[dotted] (2.5,0) node[below] {$Y^*$} -- (2.5,3);
+  \filldraw (2.5,3) circle (1.5pt);
+  \draw[->, thick] (3.6,1.9) -- (4.4,1.9) node[midway, above, font=\small] {$1$};
+  \draw[->, thick] (4.4,1.4) -- (3.6,1.4) node[midway, below, font=\small] {$2$};
+\end{tikzpicture}
+\hspace{0.6cm}
+\begin{tikzpicture}[scale=0.9]
+  % Panel derecho: (Y, e)
+  \draw[->, thick] (0,0) -- (5.5,0) node[right] {$Y$};
+  \draw[->, thick] (0,0) -- (0,5) node[above] {$e$};
+  \draw[red!70!black, very thick] (2.5,0.4) -- (2.5,4.7) node[above] {$LM^*$};
+  \draw[blue!70!black, very thick] (0.5,1) -- (4.2,4.7) node[above] {$IS^*$};
+  \draw[blue!70!black, very thick, dashed] (1.5,1) -- (5,4.5) node[right] {$IS^{*\prime}$};
+  \draw[dashed] (0,3) node[left] {$e_1$} -- (2.5,3);
+  \draw[dashed] (0,2) node[left] {$e_2$} -- (2.5,2);
+  \draw[dotted] (2.5,0) node[below] {$Y^*$} -- (2.5,0.4);
+  \filldraw (2.5,3) circle (1.5pt);
+  \filldraw (2.5,2) circle (1.5pt);
+  \draw[->, thick] (3.0,3.6) -- (3.9,3.6);
+\end{tikzpicture}
+\end{center}
+
+
+
+En cuanto al modelo IS-LM, tenemos una política fiscal expansiva con tipo de cambio flexible. El aumento en el gasto de gobierno genera un aumento en la tasa de interés que motiva la entrada de capitales, apreciando el tipo de cambio. La apreciación del tipo de cambio impacta en una reducción de las exportaciones netas, por lo que no hay cambio en el producto.
+
+\end{solution}
+
+
+\end{itemize}
+
+\end{document}
